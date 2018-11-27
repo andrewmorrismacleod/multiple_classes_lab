@@ -28,4 +28,15 @@ class BusTest < MiniTest::Test
     assert_equal("James", result)
   end
 
+  def test_pick_up
+    passenger1 = Person.new("James", 22)
+    passenger2 = Person.new("Steve", 30)
+    bus = Bus.new(25, "Ocean Terminal")
+    bus.pick_up(passenger1)
+    bus.pick_up(passenger2)
+    bus.drop_off(passenger2)
+    result = bus.passengers.length
+    assert_equal(1, result)
+  end
+
 end

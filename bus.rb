@@ -16,4 +16,8 @@ attr_reader :number, :destination, :passengers
     @passengers.push(person)
   end
 
+  def drop_off(person)
+    @passengers.delete(person)
+  end
+
 end
