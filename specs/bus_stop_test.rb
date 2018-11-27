@@ -24,4 +24,26 @@ class BusStopTest < MiniTest::Test
     assert_equal("Steve", result)
   end
 
+  def test_pick_up_passengers
+    bus = Bus.new(25, "Silverknowes")
+    bus_stop1 = BusStop.new("Lothian Road")
+    bus_stop2 = BusStop.new("Ocean Terminal")
+    person1 = Person.new("Steve", 30)
+    person2 = Person.new("James", 22)
+    person3 = Person.new("Sarah", 35)
+    person4 = Person.new("Roz", 30)
+    bus_stop1.add_person_to_queue(person1)
+    bus_stop1.add_person_to_queue(person2)
+    bus_stop2.add_person_to_queue(person3)
+    bus_stop2.add_person_to_queue(person4)
+    bus.pick_up_from_stop(bus_stop1)
+    bus_stop1.empty
+    bus.pick_up_from_stop(bus_stop2)
+    bus_stop2.empty
+    assert_equal(0, bus_stop1.queue.length)
+    assert_equal(0, bus_stop2.queue.length)
+    assert_equal(4, bus.passengers.length)
+    assert_equal("Roz", bus.passengers[3].name)
+  end
+
 end

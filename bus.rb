@@ -24,6 +24,12 @@ attr_reader :number, :destination, :passengers
     @passengers = []
   end
 
+  def pick_up_from_stop(stop)
+    for person in stop.queue
+      @passengers.push(person)
+    end
+  end
+
 
 
 end
