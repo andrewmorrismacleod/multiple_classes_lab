@@ -12,4 +12,8 @@ attr_reader :number, :destination, :passengers
     return "Brum brum"
   end
 
+  def pick_up(person)
+    @passengers.push(person)
+  end
+
 end
