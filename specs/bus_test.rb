@@ -5,9 +5,14 @@ require_relative("../bus")
 class BusTest < MiniTest::Test
 
   def test_bus_number
-    expected = 25
-    bus = Bus.new(expected)
-    assert_equal(expected, bus.number)
+    bus = Bus.new(25, "Ocean Terminal")
+    assert_equal(25, bus.number)
+  end
+
+  def test_drive
+    bus = Bus.new(25, "Ocean Terminal")
+    assert_equal("Brum brum", bus.drive)
+
   end
 
 
