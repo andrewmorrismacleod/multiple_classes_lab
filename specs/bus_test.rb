@@ -12,7 +12,6 @@ class BusTest < MiniTest::Test
   def test_drive
     bus = Bus.new(25, "Ocean Terminal")
     assert_equal("Brum brum", bus.drive)
-
   end
 
 
