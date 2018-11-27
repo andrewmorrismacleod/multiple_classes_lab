@@ -20,4 +20,10 @@ attr_reader :number, :destination, :passengers
     @passengers.delete(person)
   end
 
+  def empty
+    @passengers = []
+  end
+
+
+
 end
