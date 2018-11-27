@@ -11,4 +11,9 @@ class BusStopTest < MiniTest::Test
     assert_equal("Ocean Terminal", bus_stop.name)
   end
 
+  def test_get_queue_length
+    bus_stop = BusStop.new("Ocean Terminal")
+    assert_equal(0, bus_stop.queue.length)
+  end
+
 end
